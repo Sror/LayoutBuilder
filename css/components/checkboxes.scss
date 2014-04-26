@@ -1,0 +1,36 @@
+.checkbox {
+	display: inline-block;
+	input[type="checkbox"] {
+		display: none;
+		&:checked ~ label:after {
+			content: '✔';
+			font-family: arial;
+			display: block;
+			width: 14px;
+			height: 14px;
+			position: absolute;
+			left: 0;
+			bottom: 3px;
+			color: $green;
+			border-radius: 2px;
+		}
+	}
+	label {
+		display: inline-block;
+		cursor: pointer;
+		position: relative;
+		padding-left: 18px;
+		&:before {
+			content: '';
+			display: block;
+			width: 14px;
+			height: 14px;
+			position: absolute;
+			left: 0;
+			bottom: 2px;
+			background: darken($white, 10%);
+			border: 1px solid darken($white, 20%);
+			border-radius: 2px;
+		}
+	}
+}

@@ -1,0 +1,94 @@
+.grid {
+	overflow: hidden;
+	zoom: 1;
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+	.col {
+		float: left;
+		-webkit-transition: all ease .25s;
+	    -moz-transition: all ease .25s;
+	    -o-transition: all ease .25s;
+	    transition: all ease .25s;
+	}
+	&.padded-small {
+		margin: -4px;
+		.col {
+			padding: 4px;
+		}
+	}
+	&.padded-medium, &.padded {
+		margin: -8px;
+		.col {
+			padding: 8px;
+		}
+	}
+	&.padded-large {
+		margin: -16px;
+		.col {
+			padding: 16px;
+		}
+	}
+	&.padded-xlarge {
+		margin: -32px;
+		.col {
+			padding: 32px;
+		}
+	}
+	&.padded-xxlarge {
+		margin: -64px;
+		.col {
+			padding: 64px;
+		}
+	}
+	// Row based grid
+	@for $i from 1 through 12 {
+		&.large-#{$i} .col { width: percentage($i/12) };
+	}
+	@media (max-width: $medium) {
+		@for $i from 1 through 12 {
+			&.medium-#{$i} .col { width: percentage($i/12) };
+		}
+	}
+	@media (max-width: $small) {
+		@for $i from 1 through 12 {
+			&.small-#{$i} .col { width: percentage($i/12) };
+		}
+	}
+	// Column based grid
+	@for $i from 1 through 12 {
+		.large-#{$i} { width: percentage($i/12) };
+	}
+	@media (max-width: $medium) {
+		@for $i from 1 through 12 {
+			.medium-#{$i} { width: percentage($i/12) };
+		}
+	}
+	@media (max-width: $small) {
+		@for $i from 1 through 12 {
+			.small-#{$i} { width: percentage($i/12) };
+		}
+	}
+
+	&.fluid {
+		display: table;
+		min-width: 100%;
+		.column {
+			display: table-cell;
+			vertical-align: top;
+			float: none;
+
+			&.fluid {
+				width: 100%
+			}
+
+			&.static {
+
+			}
+		}
+	}
+}

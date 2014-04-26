@@ -1,0 +1,88 @@
+$color-values: $green, $blue, $purple, $red, $orange, $yellow, $white, $grey, $black;
+$color-names: green, blue, purple, red, orange, yellow, white, grey, black;
+.button {
+	font-size: 1em;
+	padding: 8px 16px;
+	margin: 0px;
+	border: 0px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-transition: background 0.25s ease, color 0.25s ease;
+	-moz-transition: background 0.25s ease, color 0.25s ease;
+	-ms-transition: background 0.25s ease, color 0.25s ease;
+	-o-transition: background 0.25s ease, color 0.25s ease;
+	transition: background 0.25s ease, color 0.25s ease;
+	&.extra-small {
+		padding: 4px 8px;
+		font-size: 0.857em;
+	}
+	&.small {
+		padding: 8px 16px;
+	}
+	&.medium {
+		padding: 10px 24px;
+		font-weight: bold;
+	}
+	&.large {
+		padding: 14px 32px;
+		font-weight: bold;
+	}
+	&.extra-large {
+		padding: 18px 40px;
+		font-size: 1.143em;
+		font-weight: bold;
+	}
+	&.input {
+		margin-left: -8px;
+	}
+	color: $white;
+	background: $grey;
+	&:hover {
+		color: $white;
+		background: lighten($grey, 10%);
+	}
+	&.outline {
+		color: $grey;
+		background: transparent;
+		box-shadow: inset 0px 0px 0px 1px $grey;
+
+		&:hover {
+			color: $white;
+			background: lighten($grey, 5%);
+		}
+	}
+	@for $i from 1 through length($color-names) {
+		&.#{nth($color-names, $i)} {
+			color: $white;
+			background: lighten(nth($color-values, $i), 5%);
+			&:hover {
+				background: lighten(nth($color-values, $i), 10%);
+			}
+			&.outline {
+				color: nth($color-values, $i);
+				background: transparent;
+				box-shadow: inset 0px 0px 0px 1px nth($color-values, $i);
+				&:hover {
+					color: $white;
+					background: lighten(nth($color-values, $i), 5%);
+				}
+			}
+		}
+	}
+	&.white {
+		color: $black;
+		&:hover {
+			background: darken($white, 10%);
+		}
+		&.outline {
+			&:hover {
+				color: $black;
+			}
+		}
+	}
+	&.toggle.active {
+		@extend .button.green;
+	}
+}

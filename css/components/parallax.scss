@@ -1,0 +1,9 @@
+.parallax>div:not(.parallax-content) {
+	position: fixed;
+	left: 0;
+	right: 0;
+}
+.parallax-content {
+	visibility: hidden;
+	opacity: 0;
+}

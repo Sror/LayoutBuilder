@@ -1,0 +1,37 @@
+.select {
+	position: relative;
+	display: inline-block;
+	select {
+		margin: 0;
+		padding: 0;
+		color: inherit;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-ms-appearance: none;
+		-o-appearance: none;
+		appearance: none;
+		background: transparent;
+		border-color: transparent;
+		padding: 6px 28px 6px 8px;
+		&::-ms-expand {
+			display: none;
+		}
+		option {
+			color: black;
+			background: white;
+		}
+	}
+	&:after {
+		position: absolute;
+		content: '';
+		display: inline-block;
+		top: 50%;
+		margin-top: -4px;
+		right: 12px;
+		border-left: 6px solid transparent;
+		border-right: 6px solid transparent;
+		border-top: 8px solid $white;
+		margin-bottom: 2px;
+		pointer-events: none;
+	}
+}

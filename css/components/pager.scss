@@ -1,0 +1,30 @@
+.pager {
+	background: darken($white, 10%);
+	border: 1px solid darken($white, 20%);
+	overflow: auto;
+	ul {
+		white-space: nowrap;
+		&:after {
+			clear: both;
+			content: '';
+			display: block;
+		}
+	}
+	li {
+		display: inline-block;
+		margin-right: -4px;
+		a {
+			padding: 8px 16px;
+			background: darken($white, 10%);
+			position: relative;
+			border-right: 1px solid darken($white, 20%);
+			&:hover {
+				background: $blue;
+				color: $white;
+			}
+		}
+		&:last-child a {
+			border-right: 0;
+		}
+	}
+}

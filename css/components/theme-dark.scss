@@ -1,0 +1,344 @@
+// Theme - Dark
+
+// Colors	
+	$green: 	rgb(80, 160, 50);
+	$blue: 		rgb(70, 130, 240);
+	$purple: 	rgb(115, 70, 180);
+	$red: 		rgb(220, 30, 30);
+	$orange: 	rgb(215, 140, 45);
+	$white: 	rgb(255, 255, 255);
+	$grey: 		rgb(125, 125, 125);
+	$black: 	rgb(0, 0, 0);
+
+// Fonts
+	@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+	$font: 'Open Sans', Arial, sans-serif;
+	$font-size: 14px;
+
+// Base
+	body {
+		color: $white;
+		background: lighten($black, 15%);
+		position: relative;
+		z-index: -2;
+	}
+	.background {
+		background: url('../img/triangles.svg') center center;
+		opacity: 0.15;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: -999;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	a {
+		color: darken($white, 10%);
+
+		&:hover {
+			color: $white;
+		}
+	}
+	hr {
+		border-bottom: 1px solid darken($white, 25%);
+	}
+
+// Banner
+	.banner {
+		color: $white;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+	.animatedGradient {
+		background: linear-gradient(to right,  rgba(150, 90, 180, 0.6) 0%, rgba(40, 150, 220, 0.6) 25%, rgba(58, 213, 132, 0.6) 50%, rgba(40, 150, 220, 0.6) 75%, rgba(150, 90, 180, 0.6) 100%);
+		background-size: auto 400%;
+		background-position: 0 100%;
+		animation: gradient 60s infinite;
+		animation-fill-mode:forwards;
+		animation-timing-function: linear;
+		-webkit-animation: gradient 60s infinite;
+		-webkit-animation-fill-mode: forwards;
+		-webkit-animation-timing-function: linear;
+	}
+	@-webkit-keyframes gradient { 
+	  0% { 
+			background-position: 0 0;
+		} 
+
+		100% { 
+			background-position: -200% 0;
+		} 
+
+	}
+	@keyframes gradient { 
+	  0% { 
+			background-position: 0 0;
+		} 
+
+		100% { 
+			background-position: -200% 0;
+		} 
+
+	}
+	
+// Page Width
+	.max {
+		max-width: 960px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+// Logo
+	.logo {
+		float: left;
+		a {
+		color: darken($white, 10%);
+		padding: 16px;
+		text-shadow: 0px 1px 1px $black;
+			&:hover {
+				color: rgba(255, 255, 255, 1);
+				background: rgba(255, 255, 255, 0.1);
+			}
+		}
+	}
+
+// Header
+	.header {
+		box-shadow: 0px 1px rgba(255, 255, 255, 0.15);
+		background: linear-gradient(to bottom, lighten($black, 15%), lighten($black, 10%));
+
+		.menu li a {
+			color: darken($white, 10%);
+			background: linear-gradient(to bottom, lighten($black, 20%), lighten($black, 15%));
+
+			&:hover {
+				color: $white;
+				background: linear-gradient(to bottom, lighten($black, 25%), lighten($black, 20%));
+			}
+		}
+	}
+
+// Slier
+	ul.slider li.slide {
+		max-height: 400px;
+	}
+	ul.slider li.slide .caption {
+		background: rgba(0, 0, 0, 0.5);
+		color: rgb(255, 255, 255);
+	}
+
+// Table
+	.table table {
+		background: light(black, 20%);
+	}
+
+// Buttons
+	// Default
+	.button {
+		color: $white;
+		background: $grey;
+		box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2), inset 0px 1px rgba(255, 255, 255, 0.2);
+		
+		&:hover {
+			color: $white;
+			background: lighten($grey, 10%);
+		}
+
+		&.outline {
+			color: $grey;
+			background: transparent;
+			box-shadow: inset 0px 0px 0px 1px $grey;
+
+			&:hover {
+				color: $white;
+				background: lighten($grey, 5%);
+				box-shadow: none;
+			}
+		}
+
+		// Black
+		&.black {
+			color: $white;
+			background: lighten($black, 5%);
+
+			&:hover {
+				background: lighten($black, 10%);
+			}
+
+			&.outline {
+				color: $black;
+				background: transparent;
+				box-shadow: inset 0px 0px 0px 1px $black;
+
+				&:hover {
+					color: $white;
+					background: lighten($black, 5%);
+				}
+			}
+		}
+
+		// White
+		&.white {
+			color: $black;
+			background: darken($white, 10%);
+
+			&:hover {
+				background: $white;
+			}
+
+			&.outline {
+				color: $white;
+				background: transparent;
+				box-shadow: inset 0px 0px 0px 1px $white;
+
+				&:hover {
+					color: $black;
+					background: darken($white, 10%);
+				}
+			}
+		}
+		
+		// Green
+		&.green {
+			color: $white;
+			background: $green;
+
+			&:hover {
+				background: lighten($green, 10%);
+			}
+
+			&.outline {
+				color: $green;
+				background: transparent;
+				box-shadow: inset 0px 0px 0px 1px $green;
+
+				&:hover {
+					color: $white;
+					background: $green;
+				}
+			}
+		}
+		
+		// Blue
+		&.blue {
+			color: $white;
+			background: $blue;
+
+			&:hover {
+				background: lighten($blue, 10%);
+			}
+
+			&.outline {
+				color: $blue;
+				background: transparent;
+				box-shadow: inset 0px 0px 0px 1px $blue;
+
+				&:hover {
+					color: $white;
+					background: $blue;
+					box-shadow: none;
+				}
+			}
+		}
+		
+		// Purple
+		&.purple {
+			color: $white;
+			background: $purple;
+
+			&:hover {
+				background: lighten($purple, 10%);
+			}
+
+			&.outline {
+				color: $purple;
+				background: transparent;
+				box-shadow: inset 0px 0px 0px 1px $purple;
+
+				&:hover {
+					color: $white;
+					background: $purple;
+				}
+			}
+		}
+
+		// Red
+		&.red {
+			color: $white;
+			background: $red;
+
+			&:hover {
+				background: lighten($red, 10%);
+			}
+
+			&.outline {
+				color: $red;
+				background: transparent;
+				box-shadow: inset 0px 0px 0px 1px $red;
+
+				&:hover {
+					color: $white;
+					background: $red;
+				}
+			}
+		}
+
+		// Orange
+		&.orange {
+			color: $white;
+			background: $orange;
+
+			&:hover {
+				background: lighten($orange, 10%);
+			}
+
+			&.outline {
+				color: $orange;
+				background: transparent;
+				box-shadow: inset 0px 0px 0px 1px $orange;
+
+				&:hover {
+					color: $white;
+					background: $orange;
+				}
+			}
+		}
+	}
+
+// Footer
+	.pre-footer .column:not(:last-child) {
+		border-right: 1px solid darken($white, 50%);
+	}
+	.footer {
+		background: rgb(50, 50, 50);
+	}
+	.footer a {
+		color: rgba(255, 255, 255, 0.9);
+	}
+	.footer a:hover {
+		color: rgba(255, 255, 255, 1);
+	}
+
+// Round
+	.round {
+		border-radius: 4px;
+
+		&.top {
+			border-radius: 4px 4px 0px 0px;
+		}
+
+		&.right {
+			border-radius: 0px 4px 4px 0px;
+		}
+
+		&.bottom {
+			border-radius: 0px 0px 4px 4px;
+		}
+
+		&.left {
+			border-radius: 4px 0px 0px 4px;
+		}
+	}

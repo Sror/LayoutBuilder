@@ -1,0 +1,96 @@
+.menu-wrapper {
+	background: lighten($black, 10%);
+	float: right;
+
+	ul {
+
+		li {
+			list-style-type: none;
+			position: relative;
+			display: inline-block;
+			float: left;
+
+			a {
+				display: inline-block;
+				padding: 16px;
+			}
+
+			&.current-menu-item a {
+				box-shadow: inset 0px -4px $blue;
+			}
+		}
+
+		&:after {
+			clear: both;
+			display: block;
+			content: '';
+		}
+	}
+
+	.menu-toggle {
+		cursor: pointer;
+	}
+}
+
+@media screen and (max-width: 800px) {
+
+	.header {
+		position: fixed;
+	}
+
+	.header .menu {
+		width: 100%;
+	}
+
+	.header .menu li {
+		width: 100%;
+	}
+
+	.header .menu li a {
+		width: 100%;
+	}
+
+	.header .menu>div {
+		position: fixed;
+		width: 100%;
+	}
+
+	.header .menu-wrapper {
+		float: none !important;
+		background: light($black, 10%);
+	}
+
+	.header .menu-wrapper .menu-toggle {
+		display: block;
+		background: lighten($black, 10%);
+		z-index: 99;
+		float: right;
+		padding: 16px;
+	}
+
+	.header .menu-wrapper .menu-toggle:hover {
+		background: lighten($black, 20%);
+	}
+	
+	.header .menu-wrapper .menu-toggle:after {
+		content: "";
+		padding-top: 4px;
+		border-bottom: 12px double $white; 
+		border-top: 4px solid $white; 
+		height: 8px; 
+		width: 24px;
+		display: inline-block;
+	}
+
+	.header .menu-wrapper ul li.current-menu-item a {
+		box-shadow: inset 4px 0px $blue;
+	}
+
+	.header .menu-wrapper ul.menu {
+		display: none;
+	}
+
+	.header .menu ul li a:hover + ul {
+		display: none;
+	}
+}

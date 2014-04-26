@@ -1,0 +1,28 @@
+table {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	table {
+		table {
+			pointer-events: none;
+			span {
+				cursor: pointer;
+				pointer-events: all;
+			}
+		}
+		td:hover {
+			box-shadow: 0px 0px 8px blue;
+			cursor: move;
+			z-index: 5;
+			position: relative;
+		}
+	}
+}
+.selected {
+	background: blue;
+}
+.ui-sortable-helper {
+	opacity: 0.8;
+}

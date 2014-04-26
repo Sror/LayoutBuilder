@@ -1,0 +1,48 @@
+.triangle {
+	height: 8px;
+	width: 12px;
+	position: relative;
+	display: inline-block;
+}
+
+.triangle:after {
+	position: absolute;
+	display: block;
+	content: "";
+}
+
+.triangle.left:after {
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	border-right: 8px solid rgba(0,0,0,0.4);
+}
+
+.triangle.right:after {
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	border-left: 8px solid rgba(0,0,0,0.4);
+}
+
+.triangle.up:after {
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 8px solid rgba(0,0,0,0.4);
+}
+
+.triangle.down:after {
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 8px solid rgba(0,0,0,0.4);
+}
+
+.triangle.down.blue:after {
+	border-top-color: $blue;
+}
+
+.triangle.down.white:after {
+	border-top-color: $white;
+}
+
+.circle {
+	border-radius: 50%;
+}

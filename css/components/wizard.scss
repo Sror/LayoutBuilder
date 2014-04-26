@@ -1,0 +1,58 @@
+.wizard {
+	border: 1px solid darken($white, 20%);
+	background: darken($white, 10%);
+	overflow: auto;
+	ul {
+		white-space: nowrap;
+		&:after {
+			clear: both;
+			content: '';
+			display: block;
+		}
+		li {
+			white-space: nowrap;
+			margin-right: -4px;
+			margin-bottom: -4px;
+			display: inline-block;
+			&:first-child a{
+				padding-left: 16px;
+			}
+			a {
+				background: darken($white, 10%);
+				float: left;
+				padding: 8px 16px 8px 32px;
+				position: relative;
+				white-space: nowrap;
+				&:hover {
+					background: $blue;
+					color: $white;
+					&:after {
+						background: $blue;
+					}
+				}
+				&:after {
+					position: absolute;
+					top: 5px;
+					right: -13px;
+					z-index: 1;
+					display: block;
+					width: 25px;
+					height: 25px;
+					background: darken($white, 10%);
+					box-shadow: 1px -1px 0px darken($white, 20%);
+					-webkit-transform: rotate(45deg);
+					-moz-transform: rotate(45deg);
+					-ms-transform: rotate(45deg);
+					-o-transform: rotate(45deg);
+					transform: rotate(45deg);
+					content: "";
+					-webkit-transition: background 0.5s ease-out;
+					-moz-transition: background 0.5s ease-out;
+					-ms-transition: background 0.5s ease-out;
+					-o-transition: background 0.5s ease-out;
+					transition: background 0.5s ease-out;
+				}
+			}
+		}
+	}
+}

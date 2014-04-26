@@ -1,0 +1,23 @@
+html, body,
+div, span, i,
+h1, h2, h3, h4, h5, h6,
+p, blockquote,
+a, img,
+ol, ul, li,
+table, tbody, tfoot, thead,
+tr, th, td,
+footer, header,
+menu, nav {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	outline: 0;
+}

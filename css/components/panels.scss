@@ -1,0 +1,90 @@
+.panel {
+	box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.35);
+	
+	.panel-header {
+		padding: 8px;
+		background: $blue;
+		color: $white;
+	}
+
+	.panel-content {
+		padding: 8px;
+		background: lighten($black, 5%);
+	}
+
+	.panel-footer {
+		padding: 8px;
+		background: lighten($black, 10%);
+	}
+}
+
+.post-title {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.category, .date {
+	padding: 4px 8px;
+}
+
+.prev {
+	height: 32px;
+	width: 32px;
+	position: relative;
+	cursor: pointer;
+	float: left;
+	padding: 0;
+}
+
+.prev a {
+	height: 30px;
+	width: 30px;
+	display: block;
+}
+
+.prev:after {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	content: '';
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 5px 8px 5px 0;
+	border-color: transparent rgba(70,130,240,1) transparent transparent;
+}
+
+.prev:hover:after {
+	border-color: transparent rgba(255,255,255,1) transparent transparent;
+}
+
+.next {
+	height: 32px;
+	width: 32px;
+	position: relative;
+	cursor: pointer;
+	float: right;
+	padding: 0;
+}
+
+.next a {
+	height: 30px;
+	width: 30px;
+	display: block;
+}
+
+.next:after {
+	position: absolute;
+	top: 10px;
+	left: 11px;
+	content: '';
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 5px 0px 5px 8px;
+	border-color: transparent transparent transparent rgba(70,130,240,1);
+}
+
+.next:hover:after {
+	border-color: transparent transparent transparent rgba(255,255,255,1);
+}

@@ -1,0 +1,163 @@
+// Colors	
+	$green: 	rgb(80, 160, 50);
+	$blue: 		rgb(70, 130, 240);
+	$purple: 	rgb(115, 70, 180);
+	$red: 		rgb(220, 30, 30);
+	$orange: 	rgb(255, 90, 0);
+	$yellow: 	rgb(255, 180, 20);
+	$white: 	rgb(255, 255, 255);
+	$grey: 		rgb(125, 125, 125);
+	$black: 	rgb(0, 0, 0);
+	$success: 	$green;
+	$info: 		$blue;
+	$warning: 	$orange;
+	$alert: 	$red;
+
+// Device Sizes
+	$large: 	1024px;
+	$medium: 	768px;
+	$small: 	480px;
+	$max: 		600px;
+
+// Fonts
+	@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+	$font: 'Open Sans', Arial, sans-serif;
+	$font-size: 14px;
+
+// Base
+	body {
+		color: $black;
+		background: $white;
+		position: relative;
+		z-index: -2;
+	}
+	a {
+		color: lighten($black, 10%);
+
+		&:hover {
+			color: $blue;
+		}
+	}
+	hr {
+		border-bottom: 1px solid darken($white, 25%);
+	}
+
+// Banner
+	.banner {
+		color: $white;
+		background-color: $purple;
+		position: relative;
+		&:after {
+			content: '';
+			background: url(../img/mountains.png) no-repeat center -40px;
+			opacity: 0.1;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			position: absolute;
+		}
+	}
+	
+// Page Width
+	.max {
+		max-width: $max;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+// Logo
+	.logo {
+		float: left;
+		a {
+		color: darken($white, 10%);
+		padding: 16px;
+		text-shadow: 0px 1px 1px $black;
+			&:hover {
+				color: rgba(255, 255, 255, 1);
+				background: rgba(255, 255, 255, 0.1);
+			}
+		}
+	}
+
+// Header
+	.header {
+		background: lighten($black, 15%);
+
+		.menu li a {
+			color: darken($white, 10%);
+			background: lighten($black, 20%);
+
+			&:hover {
+				color: $white;
+				background: lighten($black, 25%);
+			}
+		}
+	}
+
+// Slier
+	ul.slider li.slide {
+		max-height: 400px;
+	}
+	ul.slider li.slide .caption {
+		background: rgba(0, 0, 0, 0.5);
+		color: rgb(255, 255, 255);
+	}
+
+// Table
+	.table table {
+		background: light(black, 20%);
+	}
+
+// Drop-downs
+	.drop-down {
+		background: $white;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+		border: 1px solid darken($white, 20%);
+		&:before {
+			background: $white;
+			box-shadow: -1px -1px darken($white, 20%);
+		}
+		a {
+			color: $black;
+			&:hover {
+				background: $blue;
+				color: $white;
+			}
+		}
+	}
+
+// Footer
+	.pre-footer .column:not(:last-child) {
+		border-right: 1px solid darken($white, 50%);
+	}
+	.footer {
+		background: rgb(50, 50, 50);
+	}
+	.footer a {
+		color: rgba(255, 255, 255, 0.9);
+	}
+	.footer a:hover {
+		color: rgba(255, 255, 255, 1);
+	}
+
+// Round
+	.round {
+		border-radius: 4px;
+
+		&.top {
+			border-radius: 4px 4px 0px 0px;
+		}
+
+		&.right {
+			border-radius: 0px 4px 4px 0px;
+		}
+
+		&.bottom {
+			border-radius: 0px 0px 4px 4px;
+		}
+
+		&.left {
+			border-radius: 4px 0px 0px 4px;
+		}
+	}

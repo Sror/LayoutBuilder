@@ -1,0 +1,27 @@
+.tabs {
+	ul {
+		background: darken($blue, 10%);
+
+		&:after {
+			clear: both;
+			content: '';
+			display: block;
+		}
+
+		li {
+			float: left;
+
+			a {
+				padding: 8px;
+				@extend .button.blue
+			}
+		}
+	}
+	.tab-content {
+		padding: 8px;
+		display: none;
+	}
+	.tab-content:first-child {
+		display: block;
+	}
+}

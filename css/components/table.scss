@@ -1,0 +1,38 @@
+/* Makes table horizontally scrollable on mobile*/
+.table {
+	overflow: auto;
+	width: 100%;
+	border: 1px solid darken($white, 20%);
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+		empty-cells: show;
+		width: 100%;
+		thead {
+			background: darken($white, 10%);
+		}
+	}
+}
+
+.table th {
+	padding: 8px 16px;
+	border-left: 1px solid darken($white, 20%);
+	border-bottom: 1px solid darken($white, 20%);
+}
+
+.table th:first-child {
+	border-left: 0;
+}
+
+.table td {
+	padding: 8px 16px;
+	border-left: 1px solid darken($white, 20%);
+}
+
+.table td:first-child {
+	border-left: 0;
+}
+
+.table tr:nth-child(odd) > td {
+	background: darken($white, 5%);
+}

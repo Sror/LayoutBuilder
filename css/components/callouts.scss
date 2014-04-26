@@ -1,0 +1,62 @@
+.callout {
+	padding: 16px;
+	border-left-width: 4px;
+	border-left-style: solid;
+	background: rgb(245,245,245);
+	margin-top: 16px;
+	margin-bottom: 16px;
+
+	p {
+		margin: 0;
+	}
+
+	@for $index from 1 through 6 {
+		h#{$index} {
+			font-weight: 400;
+		}
+	}
+
+	&.warning {
+		background: mix($orange, $white, 10%);
+		border-left-color: $orange;
+
+		@for $index from 1 through 6 {
+			h#{$index} {
+				color: $orange;
+			}
+		}
+	}
+
+	&.danger {
+		background: mix($red, $white, 10%);
+		border-left-color: $red;
+
+		@for $index from 1 through 6 {
+			h#{$index} {
+				color: $red;
+			}
+		}
+	}
+
+	&.success {
+		background: mix($green, $white, 10%);
+		border-left-color: $green;
+
+		@for $index from 1 through 6 {
+			h#{$index} {
+				color: $green;
+			}
+		}
+	}
+
+	&.info {
+		background: mix($blue, $white, 10%);
+		border-left-color: $blue;
+
+		@for $index from 1 through 6 {
+			h#{$index} {
+				color: $blue;
+			}
+		}
+	}
+}

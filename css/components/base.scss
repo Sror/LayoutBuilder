@@ -1,0 +1,182 @@
+@mixin border-radius($top-right: 4px, $bottom-right: 4px, $bottom-left: 4px, $top-left: 4px, $radius: 4px, $top: 4px, $right: 4px, $button: 4px, $left: 4px) {
+	@if $top-right {
+		-webkit-border-top-right-radius: $top-right;
+		-webkit-border-bottom-right-radius: $bottom-right;
+		-webkit-border-bottom-left-radius: $bottom-left;
+		-webkit-border-top-left-radius: $top-left;
+		-moz-border-top-right-radius: $top-right;
+		-moz-border-bottom-right-radius: $bottom-right;
+		-moz-border-bottom-left-radius: $bottom-left;
+		-moz-border-top-left-radius: $top-left;
+		border-top-right-radius: $top-right;
+		border-bottom-right-radius: $bottom-right;
+		border-bottom-left-radius: $bottom-left;
+		border-top-left-radius: $top-left;
+	} @else if $radius {
+		-webkit-border-radius: $radius;
+		-moz-border-radius: $radius;
+		border-radius: $radius;
+	} @else if $top {
+		-webkit-border-top-left-radius: $top;
+		-moz-border-top-left-radius: $top;
+		border-top-left-radius: $top;
+		-webkit-border-top-right-radius: $top;
+		-moz-border-top-left-radius: $top;
+		border-top-right-radius: $top;
+	} @else if $right {
+		-webkit-border-top-right-radius: $right;
+		-moz-border-top-right-radius: $right;
+		border-top-right-radius: $right;
+		-webkit-border-bottom-right-radius: $right;
+		-moz-border-bottom-right-radius: $right;
+		border-bottom-right-radius: $top;
+	} @else if $bottom {
+		-webkit-border-bottom-right-radius: $bottom;
+		-moz-border-bottom-right-radius: $bottom;
+		border-bottom-right-radius: $bottom;
+		-webkit-border-bottom-left-radius: $bottom;
+		-moz-border-bottom-left-radius: $bottom;
+		border-bottom-left-radius: $bottom;
+	} @else if $left {
+		-webkit-border-top-left-radius: $left;
+		-moz-border-top-left-radius: $left;
+		border-top-left-radius: $left;
+		-webkit-border-bottom-left-radius: $left;
+		-moz-border-bottom-left-radius: $left;
+		border-bottom-left-radius: $left;
+	}
+}
+@mixin gradient($start-color: darken($white, 20%), $end-color: $white) {
+	background: $start-color;
+	background: -webkit-gradient(linear, left top, left bottom, from($start-color), to($end-color));
+	background: -webkit-linear-gradient(top, $start-color, $end-color);
+	background: -moz-linear-gradient(top, $start-color, $end-color);
+	background: -ms-linear-gradient(top, $start-color, $end-color);
+	background: -o-linear-gradient(top, $start-color, $end-color);
+}
+@mixin border-radius($radius: 4px) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin box-sizing($type: border-box) {
+	-webkit-box-sizing: $type;
+	-moz-box-sizing: $type;
+	box-sizing: $type;
+}
+@mixin opacity($opacity: 0.5) {
+	-webkit-opacity: $opacity;
+	-moz-opacity: $opacity;
+	opacity: $opacity;
+}
+@mixin drop-shadow($x: 0px, $y: 1px, $blue: 4px, $spread: 0px, $alpha: 0.25, $inset: false) {
+	@if $inset {
+		-webkit-box-shadow: inset $x $y $blue $spread rgba(0, 0, 0, $alpha);
+		-moz-box-shadow: inset $x $y $blue $spread rgba(0, 0, 0, $alpha);
+		box-shadow: inset $x $y $blue $spread rgba(0, 0, 0, $alpha);
+	} @else {
+		-webkit-box-shadow: $x $y $blue $spread rgba(0, 0, 0, $alpha);
+		-moz-box-shadow: $x $y $blue $spread rgba(0, 0, 0, $alpha);
+		box-shadow: $x $y $blue $spread rgba(0, 0, 0, $alpha);
+	}
+}
+@mixin transition($property, $time: 0.5s, $method: ease) {
+	-webkit-transition: $property $time $method;
+	-moz-transition: $property $time $method;
+	-ms-transition: $property $time $method;
+	-o-transition: $property $time $method;
+	transition: $property $time $method;
+}
+
+body {
+	font-family: $font;
+	font-size: $font-size;
+}
+hr {
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+p {
+	margin-bottom: 8px;
+}
+br {
+	margin-bottom: 8px;
+	clear: both;
+	content: '';
+	display: block;
+}
+b {
+	font-weight: bold;
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+	display: inline-block;
+	-webkit-transition: background 0.5s ease-out, color 0.5s ease-out;
+	-moz-transition: background 0.5s ease-out, color 0.5s ease-out;
+	-ms-transition: background 0.5s ease-out, color 0.5s ease-out;
+	-o-transition: background 0.5s ease-out, color 0.5s ease-out;
+	transition: background 0.5s ease-out, color 0.5s ease-out;
+}
+h1 {
+	font-size: 48px;
+	font-weight: 300;
+}
+h2 {
+	font-size: 36px;
+	font-weight: 300;
+}
+h3 {
+	font-size: 30px;
+	font-weight: 300;
+}
+h4 {
+	font-size: 24px;
+	font-weight: 300;
+}
+h5 {
+	font-size: 16px;
+	font-weight: 300;
+}
+h6 {
+	font-size: 14px;
+	font-weight: 300;
+}
+blockquote {
+	font-family: "Georgia", serif;
+	color: #666;
+	font-style: italic;
+	line-height: 1.8;
+	border-left: 5px solid #ddd;
+	padding-left: 1.5em;
+	margin: 1em 0px;
+}
+li {
+	list-style: none;
+}
+img {
+	display: block;
+	max-width: 100%;
+}
+.align-left {
+	text-align: left
+}
+.align-right {
+	text-align: right
+}
+.align-center {
+	text-align: center
+}
+.float-left {
+	float: left
+}
+.float-right {
+	float: right
+}
+.none {display: none !important}
+.block {display: block !important}
+.hide {visibility: hidden !important}
+.clear {clear: both !important}
